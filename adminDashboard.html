@@ -13,9 +13,86 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="test.css" />
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f06220b3cd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+      function changeUserView(){
+        document.getElementById("dashboard").style.display="none";
+        document.getElementById("userlist").style.display="block";
+        document.getElementById("stastics-view").style.display="none";
+        document.getElementById("report-view").style.display="none";
+        document.getElementById("new-user-view").style.display="none";
+        document.getElementById("update-data").style.display="none";
+        document.getElementById("add-event").style.display="none";
+        document.querySelector(".user").style.background="blue";
+        document.querySelector(".dash").style.background="none";
+        document.querySelector("footer").innerHTML="&copy;UserRight2023"
+      }
+      const changeDashboard=()=>{
+        document.getElementById("dashboard").style.display="block";
+        document.getElementById("userlist").style.display="none";
+        document.getElementById("stastics-view").style.display="none";
+        document.getElementById("report-view").style.display="none";
+        document.getElementById("new-user-view").style.display="none";
+        document.getElementById("update-data").style.display="none";
+        document.getElementById("add-event").style.display="none";
+        document.querySelector(".dash").style.background="blue";
+        document.querySelector(".user").style.background="none";
+        document.querySelector("footer").innerHTML="&copy;DashboardRight2023";
+        // var a = dobument.getElementn();
+        //var b = a.style();
+        // b.display
+
+      }
+      const changeStastic=()=>{
+        document.getElementById("dashboard").style.display="none";
+        document.getElementById("userlist").style.display="none";
+        document.getElementById("stastics-view").style.display="block";
+        document.getElementById("report-view").style.display="none";
+        document.getElementById("new-user-view").style.display="none";
+        document.getElementById("update-data").style.display="none";
+        document.getElementById("add-event").style.display="none";
+      }
+      const changeReport=()=>{
+        document.getElementById("dashboard").style.display="none";
+        document.getElementById("userlist").style.display="none";
+        document.getElementById("stastics-view").style.display="none";
+        document.getElementById("report-view").style.display="block";
+        document.getElementById("new-user-view").style.display="none";
+        document.getElementById("update-data").style.display="none";
+        document.getElementById("add-event").style.display="none";
+      }
+      const addUser=()=>{
+        document.getElementById("dashboard").style.display="none";
+        document.getElementById("userlist").style.display="none";
+        document.getElementById("stastics-view").style.display="none";
+        document.getElementById("report-view").style.display="none";
+        document.getElementById("new-user-view").style.display="block";
+        document.getElementById("update-data").style.display="none";
+        document.getElementById("add-event").style.display="none";
+      }
+      const updateData=()=>{
+        document.getElementById("dashboard").style.display="none";
+        document.getElementById("userlist").style.display="none";
+        document.getElementById("stastics-view").style.display="none";
+        document.getElementById("report-view").style.display="none";
+        document.getElementById("new-user-view").style.display="none";
+        document.getElementById("update-data").style.display="block";
+        document.getElementById("add-event").style.display="none";
+      }
+      const addEvent=()=>{
+        document.getElementById("dashboard").style.display="none";
+        document.getElementById("userlist").style.display="none";
+        document.getElementById("stastics-view").style.display="none";
+        document.getElementById("report-view").style.display="none";
+        document.getElementById("new-user-view").style.display="none";
+        document.getElementById("update-data").style.display="none";
+        document.getElementById("add-event").style.display="block";
+      }
+    </script>
   </head>
   <body>
     <div class="container-fluid">
@@ -31,50 +108,50 @@
             >
               <small>Controls</small>
             </span>
-            <a
-              href=""
-              class="list-group-item text-lg-start list-group-item-action bg-primary"
+            <button
+             onClick="changeDashboard()"
+              class="list-group-item text-lg-start list-group-item-action dash"
             >
               <i class="fa-solid fa-house-chimney"></i>
-              <span class="d-none d-lg-inline">Dashboard</span> </a
-            ><a
-              href=""
-              class="list-group-item text-lg-start list-group-item-action"
+              <span class="d-none d-lg-inline">Dashboard</span> </button
+            ><button
+              onclick="changeUserView()"
+              class="list-group-item text-lg-start list-group-item-action user"
             >
               <i class="fa-sharp fa-solid fa-users"></i>
               <span class="d-none d-lg-inline">Users</span>
               <span
                 class="d-none d-lg-block rounded-pill badge bg-danger float-end"
                 >20</span
-              > </a
-            ><a
-              href=""
-              class="list-group-item text-lg-start list-group-item-action"
+              > </button
+            ><button
+              onclick="changeStastic()"
+              class="list-group-item text-lg-start list-group-item-action stastic"
             >
               <i class="fa-sharp fa-solid fa-chart-simple"></i
-              ><span class="d-none d-lg-inline">Stastics</span></a
-            ><a
-              href=""
-              class="list-group-item text-lg-start list-group-item-action"
+              ><span class="d-none d-lg-inline">Stastics</span></button
+            ><button
+              onclick="changeReport()"
+              class="list-group-item text-lg-start list-group-item-action report"
             >
               <i class="fa-sharp fa-solid fa-flag"></i
               ><span class="d-none d-lg-inline">Report</span>
-            </a>
+              </button>
           </div>
           <div class="list-group text-center mt-5 text-lg-start">
             <span
               class="list-group-item border border-top-0 border-start-0 border-end-0 text-lg-start disabled"
               ><small class="d-none muted d-lg-block">Actions</small></span
             >
-            <a href="#" class="list-group-item list-group-item-action"
+            <button onclick="addUser()" class="list-group-item list-group-item-action"
               ><i class="fa-solid fa-user"></i
-              ><span class="d-none d-lg-inline">New Users</span></a
-            ><a href="#" class="list-group-item list-group-item-action">
+              ><span class="d-none d-lg-inline adduser">New Users</span></button
+            ><button onclick="updateData()" class="list-group-item list-group-item-action">
               <i class="fa-sharp fa-solid fa-file-pen"></i>
-              <span class="d-none d-lg-inline">Update Data</span></a
-            ><a href="#" class="list-group-item list-group-item-action">
+              <span class="d-none d-lg-inline updatedata">Update Data</span></button
+            ><button onclick="addEvent()" class="list-group-item list-group-item-action">
               <i class="fa-sharp fa-solid fa-calendar-days"></i
-              ><span class="d-none d-lg-inline">Add Events</span></a
+              ><span class="d-none d-lg-inline addevent">Add Events</span></button
             >
           </div>
         </nav>
@@ -101,7 +178,7 @@
               </li>
             </ul>
           </nav>
-          <div class="container-fluid">
+          <div class="container-fluid" id="dashboard">
             <div class="alert mt-4 alert-info">
               <div class="">
                 <i class="fa-sharp fa-solid fa-download"></i>
@@ -229,7 +306,7 @@
                         </tr>
                         <tr>
                           <td>4</td>
-                          <td>>50</td>
+                          <td>50</td>
                           <td>11%</td>
                           <td>
                             <i class="fas fa-chart-pie"></i>
@@ -242,8 +319,27 @@
               </div>
             </div>
           </div>
+          <div class="container-fluid" id="userlist">
+            <H1 class="text-center">This is User list</H1>
+          </div>
+          <div class="container-fluid" id="stastics-view">
+            <H1 class="text-center">This is Stastics view</H1>
+          </div>
+          <div class="container-fluid" id="report-view">
+            <H1 class="text-center">This is Report view</H1>
+          </div>
+          <div class="container-fluid" id="new-user-view">
+            <H1 class="text-center">This is New User view</H1>
+          </div>
+          <div class="container-fluid" id="update-data">
+            <H1 class="text-center">This is Update Data View</H1>
+          </div>
+          <div class="container-fluid" id="add-event">
+            <H1 class="text-center">This is Add event view</H1>
+          </div>
         </main>
-        <footer class="text-center py-4 text-muted">
+       
+        <footer class="text-center py-4 fixed-bottom text-muted">
           &copy; Copyright 2023
         </footer>
       </div>

@@ -1,0 +1,23 @@
+
+#userlist{
+    display: none;
+}
+#stastics-view{
+    display: none;
+}
+#report-view{
+    display: none;
+}
+#new-user-view{
+    display: none;
+}
+#update-data{
+    display: none;
+}
+#add-event{
+    display: none;
+}
+
+.dash{
+    background-color: blue;
+}
